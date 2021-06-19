@@ -1,0 +1,132 @@
+.grid{
+    width: 1200px;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: auto;
+}
+
+.grid-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col{
+    &-1{
+        width: calc(100% / 12);
+    }
+    &-2{
+        width: calc(100% / 6);
+    }
+    &-3{
+        width: calc(100% / 4);
+    }
+    &-4{
+        width: calc(100% / 3);
+    }
+    &-5{
+        width: calc(100% / 12 * 5);
+    }
+    &-6{
+        width: calc(100% / 2);
+    }
+    &-7{
+        width: calc(100% / 12 * 7);
+    }
+    &-8{
+        width: calc(100% / 12 * 8);
+    }
+    &-9{
+        width: calc(100% / 12 * 9);
+    }
+    &-10{
+        width: calc(100% / 12 * 10);
+    }
+    &-11{
+        width: calc(100% / 12 * 11);
+    }
+    &-12{
+        width: 100%;
+    }
+    &-2-4{
+        width: calc(100% / 5 );
+    }
+}
+
+.g{
+  &-1{
+    margin:0 -2px;
+    [class^='col-']{
+        padding: 2px;
+        margin-bottom: 2px;
+    }
+  }
+  &-2{
+    margin:0 -5px;
+    [class^='col-']{
+        padding: 0 5px;
+        margin-bottom: 5px;
+    }
+  }
+  &-3{
+    margin:0 -8px;
+    [class^='col-']{
+        padding: 0 8px;
+        margin-bottom: 8px;
+    }
+  }
+  &-4{
+    margin:0 -12px;
+    [class^='col-']{
+        padding: 0 12px;
+        margin-bottom: 12px;
+    }
+  }
+  &-5{
+    margin:0 -17px;
+    [class^='col-']{
+        padding: 0 17px;
+        margin-bottom: 17px;
+    }
+  }
+  
+  &-1-i{
+    margin:0 -2px !important;
+    [class^='col-']{
+        padding: 2px !important;
+        margin-bottom: 4px;
+    }
+  }
+  &-2-i{
+    margin:0 -5px !important;
+    [class^='col-']{
+        padding: 0 5px !important;
+        margin-bottom: 10px;
+    }
+  }
+  &-3-i{
+    margin:0 -8px !important;
+    [class^='col-']{
+        padding: 0 8px !important;
+        margin-bottom: 16px;
+    }
+  }
+  &-4-i{
+    margin:0 -12px !important;
+    [class^='col-']{
+        padding: 0 12px !important;
+        margin-bottom: 24px;
+    }
+  }
+  &-5-i{
+    margin:0 -17px !important;
+    [class^='col-']{
+        padding: 0 17px !important;
+        margin-bottom: 34px;
+    }
+  }
+ 
+}
+
+.pt-50{
+    padding-top: 50px;
+}

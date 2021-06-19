@@ -1,0 +1,97 @@
+:root{
+    --growth-from:0;
+    --growth-to:1;
+    --slide-down-from:30px;
+    --slide-down-to:0px;
+    --color-from:black;
+    --color-to:$main;
+    --background-color-from:white;
+    --background-color-to:#cecece;
+    --border-from:#ebebeb;
+    --border-to:#ababab;
+    --filter-from: #ababab;
+    --filter-to: #ababab;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+    line-height: 1.5;
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+
+p{
+    font-size: 1rem;
+}
+
+@keyframes growth{
+    from{
+        opacity: 0;
+        transform: scale(var(--growth-from));
+    }
+    to{
+        opacity: 1;
+        transform:scale(var(--growth-to));
+    }
+}
+
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        transform: translateY(var(--slide-down-from));
+    }to{
+        opacity: 1;
+        transform: translateY(var(--slide-down-to));
+    }
+}
+
+@keyframes hoverColor{
+    from{
+        color: var(--color-from);
+    }to{
+        color: var(--color-to);
+    }
+}
+
+@keyframes hoverBackground{
+    from{
+        background: var(--background-color-from);
+    }to{
+        background: var(--background-color-to);
+    }
+}
+
+@keyframes hoverBorder{
+    from{
+        border: var(--border-from);
+    }to{
+        border: var(--border-to);
+    }
+}
+
+@keyframes hoverFilter{
+    from{
+        filter: var(--filter-from);
+    }to{
+        filter: var(--filter-to);
+    }
+}
+
+@keyframes hoverBackgroundColor{
+    from{
+        color: var(--color-from);
+        background: var(--background-color-from);
+    }
+    to{
+        color: var(--color-to);
+        background: var(--background-color-to);
+    }
+}
