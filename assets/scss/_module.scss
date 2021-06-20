@@ -109,99 +109,99 @@
     }
 }
 
-.grid {
-    width: 1200px;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin: auto;
-}
+// .grid {
+//     width: 1200px;
+//     box-sizing: border-box;
+//     max-width: 100%;
+//     margin: auto;
+// }
 
-.grid-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
-}
+// .grid-row {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-left: -15px;
+//     margin-right: -15px;
+// }
 
-.col {
-    &-1 {
-        width: calc(100% / 12);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+// .col {
+//     &-1 {
+//         width: calc(100% / 12);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-2 {
-        width: calc(100% / 6);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-2 {
+//         width: calc(100% / 6);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-3 {
-        width: calc(100% / 4);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-3 {
+//         width: calc(100% / 4);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-4 {
-        width: calc(100% / 3);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-4 {
+//         width: calc(100% / 3);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-5 {
-        width: calc(100% / 12 * 5);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-5 {
+//         width: calc(100% / 12 * 5);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-6 {
-        width: calc(100% / 2);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-6 {
+//         width: calc(100% / 2);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-7 {
-        width: calc(100% / 12 * 7);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-7 {
+//         width: calc(100% / 12 * 7);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-8 {
-        width: calc(100% / 12 * 8);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-8 {
+//         width: calc(100% / 12 * 8);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-9 {
-        width: calc(100% / 12 * 9);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-9 {
+//         width: calc(100% / 12 * 9);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-10 {
-        width: calc(100% / 12 * 10);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-10 {
+//         width: calc(100% / 12 * 10);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-11 {
-        width: calc(100% / 12 * 11);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-11 {
+//         width: calc(100% / 12 * 11);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-12 {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+//     &-12 {
+//         width: 100%;
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
 
-    &-2-4 {
-        width: calc(100% / 5);
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-}
+//     &-2-4 {
+//         width: calc(100% / 5);
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
+// }
 
 .grid-row.g {
     &-none {
@@ -319,23 +319,25 @@
 .text-center {
     text-align: center;
 }
+
 .float-start{
     float: left;
 }
+
 .float-end{
     float: right;
 }
 
-@media (max-width: 739px){
+// @media (max-width: 739px){
 
-    .fullwith{
-        width: 100% !important;
-    }
+//     .fullwith{
+//         width: 100% !important;
+//     }
 
-    .col-full{
-        width: 100% !important;
-        &:not(:last-child){
-            margin-bottom: 16px !important;
-        }
-    }
-}
+//     .col-full{
+//         width: 100% !important;
+//         &:not(:last-child){
+//             margin-bottom: 16px !important;
+//         }
+//     }
+// }
