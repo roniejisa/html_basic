@@ -1,0 +1,68 @@
+// -o-      for Opera
+// -ms-     for Internet Explorer
+// -moz-    for Firefox
+// -webkit- for Chrome and Safari
+
+@mixin transition($value){
+    transition: $value;
+    -o-transition: $value;
+    -ms-transition: $value;
+    -moz-transition: $value;
+    -webkit-transition: $value;
+}
+
+@mixin transition-delay($value){
+    transition-delay: $value;
+    -o-transition-delay: $value;
+    -ms-transition-delay: $value;
+    -moz-transition-delay: $value;
+    -webkit-transition-delay: $value;
+}
+
+@mixin transition-duration($value){
+    transition-duration: $value;
+    -o-transition-duration: $value;
+    -ms-transition-duration: $value;
+    -moz-transition-duration: $value;
+    -webkit-transition-duration: $value;
+}
+
+@mixin transition-timing-function($value){
+    transition-timing-function: $value;
+    -o-transition-timing-function: $value;
+    -ms-transition-timing-function: $value;
+    -moz-transition-timing-function: $value;
+    -webkit-transition-timing-function: $value;
+}
+
+@mixin transform($value){
+    transform: $value;
+    -o-transform: $value;
+    -ms-transform: $value;
+    -moz-transform: $value;
+    -webkit-transform: $value;
+}
+
+@mixin transform-origin($value){
+    transform-origin: $value;
+    -o-transform-origin: $value;
+    -ms-transform-origin: $value;
+    -moz-transform-origin: $value;
+    -webkit-transform-origin: $value;
+}
+
+@mixin transform-style($value){
+    transform-style: $value;
+    -o-transform-style: $value;
+    -ms-transform-style: $value;
+    -moz-transform-style: $value;
+    -webkit-transform-style: $value;
+}
+
+@mixin transform-box($value){
+    transform-box: $value;
+    -o-transform-box: $value;
+    -ms-transform-box: $value;
+    -moz-transform-box: $value;
+    -webkit-transform-box: $value;
+}

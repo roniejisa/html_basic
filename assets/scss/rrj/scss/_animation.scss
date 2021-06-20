@@ -1,16 +1,16 @@
 :root {
     --growth-from: 0;
     --growth-to: 1;
-    --slide-down-from: 30px;
-    --slide-down-to: 0px;
-    --color-from: black;
-    --color-to: $main;
+    --slide-down-from: -100%;
+    --slide-down-to: 0;
+    --color-from: white;
+    --color-to: black;
     --background-color-from: white;
-    --background-color-to: #cecece;
-    --border-from: #ebebeb;
-    --border-to: #ababab;
-    --filter-from: #ababab;
-    --filter-to: #ababab;
+    --background-color-to: black;
+    --border-from: white;
+    --border-to: black;
+    --filter-from: white;
+    --filter-to: black;
 }
 
 @keyframes growth {
@@ -87,16 +87,4 @@
         color: var(--color-to);
         background: var(--background-color-to);
     }
-}
-
-.text-center {
-    text-align: center;
-}
-
-.float-start{
-    float: left;
-}
-
-.float-end{
-    float: right;
 }
