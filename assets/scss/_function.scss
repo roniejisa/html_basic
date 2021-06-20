@@ -1,0 +1,148 @@
+@function rem($pixel){
+    @return #{$pixel/16}rem;
+}
+$root-font-size: 100% !default;
+$sides: (a: all, t: top, e: right, b: bottom, s: left, x: vertical, y: horizontal) !default;
+$spacing: 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 36px, 40px, 44px, 48px, 52px, 56px, 60px, 64px, 68px, 72px, 76px, 80px, 84px, 88px, 92px, 96px, 100px;
+$spacing-zeroed-index: true;
+$sizes: 0%, 87.5%, 100%, 112.5%, 150%, 187.5%, 250%, 275%, 362.5%, 450% !default;
+$sizes-zeroed-index: true;
+$class-name-separator: "-";
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function rem-calc($int) {
+  @if $int == "auto" {
+    @return auto;
+  }
+  $calculated-value: null;
+  $root-unit: unit($root-font-size);
+  $root-unitless: strip-unit($root-font-size);
+  $int-unit: unit($int);
+  $int-unitless: strip-unit($int);
+  @if $root-unit != 'px' and $root-unit != '%' {
+    @error "$root-font-size must use `%` or `px` in order for `rem-calc()` to function";
+  }
+  @if $int-unit != 'px' and $int-unit != '%' {
+    @error "`rem-calc() requires a `%` or `px` value to function";
+  }
+
+  @if $root-unit == '%' {
+    @if $int-unit == '%' {
+      $calculated-value: $int-unitless / $root-unitless;
+    } @else {
+      $calculated-value: $int-unitless / (($root-unitless / 100) * 16);
+    }
+  } @else {
+    @if $int-unit == '%' {
+      $calculated-value: (($root-unitless * $int-unitless) / $root-unitless) / 100;
+    } @else {
+      $calculated-value: $root-unitless / $int-unitless;
+    }
+  }
+ 
+  $calculated-value: $calculated-value + rem;
+  @return $calculated-value;
+}
+
+@function size($i) {
+  @if $sizes-zeroed-index {
+    $i: $i + 1;
+  }
+  @return nth($sizes, $i);
+}
+
+@mixin font-sizes {
+  $starting-index: 1;
+  $length: length($sizes);
+  
+  @if $sizes-zeroed-index {
+    $starting-index: 0;
+    $length: $length - 1;
+  }
+  
+  @for $i from $starting-index through $length {
+    &#{$class-name-separator}#{$i} {
+      font-size: size($i);
+    }
+  }
+}
+
+@function space($i) {
+  @if $spacing-zeroed-index {
+    $i: $i + 1;
+  }
+  $value: nth($spacing, $i);
+  @return rem-calc($value);
+}
+
+@mixin space($type) {
+  $starting-index: 1;
+  $length: length($spacing);
+  @if $spacing-zeroed-index {
+    $starting-index: 0;
+    $length: $length - 1;
+  }
+  @for $i from $starting-index through $length {
+     @include sides($type, $i, space($i));
+  }
+}
+
+@mixin sides($attr, $size, $value) {
+  $sn-modifier: '';
+  $sn-name: '';
+  @each $s, $sn in $sides {
+    @if $s == x {
+      $sn-modifier: (-top, -bottom);
+    } @else if $s == y {
+      $sn-modifier: (-left, -right);
+    } @else if $s != a {
+      $sn-modifier: -#{$sn};
+    }
+    @if $s == a {
+        $sn-name : '';
+    } @else {
+        $sn-name : $s;
+    }
+    &#{$sn-name} {
+      &#{$class-name-separator}#{$size} {
+        @if ($s == x or $s == y) {
+          @each $sn-m in $sn-modifier {
+            #{$attr}#{$sn-m}: $value;
+          }
+        } @else {
+          #{$attr}#{$sn-modifier}: $value;
+        }
+      }
+    }
+  }
+}
+
+.p {
+  @include space(padding);
+}
+.m {
+  @include space(margin);
+}
+
+@media(min-width:46.25em) and (max-width:63.9375em){
+  .md-p {
+    @include space(padding);
+  }
+  .md-m {
+    @include space(margin);
+  }
+}
+
+@media (max-width: 46.1875em){
+  .sm-p {
+    @include space(padding);
+  }
+  .sm-m {
+    @include space(margin);
+  }
+}
