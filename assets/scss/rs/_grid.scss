@@ -1,14 +1,31 @@
 :root{
-    --container : 90%;
-    --gx : 15px;
+    // SETTING GUTTER: 
+    --var-gp-1: 4px;
+    --var-gp-2: 8px;
+    --var-gp-3: 12px;
+    --var-gp-4: 16px;
+    --var-gp-5: 20px;
+    
+    --var-gm-1: -4px;
+    --var-gm-2: -8px;
+    --var-gm-3: -12px;
+    --var-gm-4: -16px;
+    --var-gm-5: -20px;
+    
+    --var-gmb-1: 8px;
+    --var-gmb-2: 16px;
+    --var-gmb-3: 24px;
+    --var-gmb-4: 32px;
+    --var-gmb-5: 40px;
 }
 
-.grid{
+.container{
     width: 100%;
     display: block;
     margin: auto;
     padding: 0;
 }
+
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +35,62 @@
         [class*="col-"]{
             padding-left: 0;
             padding-right: 0;
+        }
+    }
+    &.g{
+        &-1 {
+            margin-left: var(--var-gm-1);
+            margin-right: var(--var-gm-1);
+        
+            [class*='col-'] {
+                padding-right: var(--var-gp-1);
+                padding-left: var(--var-gp-1);
+                margin-bottom: var(--var-gmb-1);
+            }
+        }
+        
+        &-2 {
+            margin-left: var(--var-gm-2);
+            margin-right: var(--var-gm-2);
+        
+            [class*='col-'] {
+                padding-right: var(--var-gp-2);
+                padding-left: var(--var-gp-2);
+                margin-bottom: var(--var-gmb-2);
+            }
+        }
+        
+        &-3 {
+            margin-left: var(--var-gm-3);
+            margin-right: var(--var-gm-3);
+        
+            [class*='col-'] {
+                padding-right: var(--var-gp-3);
+                padding-left: var(--var-gp-3);
+                margin-bottom: var(--var-gmb-3);
+            }
+        }
+        
+        &-4 {
+            margin-left: var(--var-gm-4);
+            margin-right: var(--var-gm-4);
+        
+            [class*='col-'] {
+                padding-right: var(--var-gp-4);
+                padding-left: var(--var-gp-4);
+                margin-bottom: var(--var-gmb-4);
+            }
+        }
+        
+        &-5 {
+            margin-left: var(--var-gm-5);
+            margin-right: var(--var-gm-5);
+        
+            [class*='col-'] {
+                padding-right: var(--var-gp-5);
+                padding-left: var(--var-gp-5);
+                margin-bottom: var(--var-gmb-5);
+            }
         }
     }
 }
@@ -826,44 +899,88 @@
     }
 }
 
+// ---------------CONTAINER------------------
 // PC: WIDTH > 1720px
 @media ( min-width: 107.5em ){
-    .grid{
+    .container{
         width: 90%;
     }
 }
 
 // PC: WIDTH > 1440px && WIDTH < 1720px
 @media ( min-width: 90em ) and (max-width: 107.4375em){
-    .grid{
+    .container{
         width: 1400px;
     }
 }
 
 // PC: WIDTH > 1240px && WIDTH < 1440px
 @media ( min-width: 77.5em ) and (max-width: 89.9375em){
-    .grid{
+    .container{
         width: 1200px;
     }
 }
 
 // PC: WIDTH > 1024px && WIDTH < 1240px;
 @media ( min-width: 64em ) and (max-width: 77.4375em){
-    .grid{
+    .container{
         width: 984px;
     }
 }
 
 /* Tablet:  WIDTH > 740px && WIDTH < 1024px */
 @media (min-width: 46.25em) and (max-width:63.9375em){
-    .grid{
+    :root{
+        // SETTING GUTTER: 
+        --var-gp-1: 2px;
+        --var-gp-2: 4px;
+        --var-gp-3: 6px;
+        --var-gp-4: 8px;
+        --var-gp-5: 10px;
+        
+        --var-gm-1: -2px;
+        --var-gm-2: -4px;
+        --var-gm-3: -6px;
+        --var-gm-4: -8px;
+        --var-gm-5: -10px;
+        
+        --var-gmb-1: 4px;
+        --var-gmb-2: 8px;
+        --var-gmb-3: 12px;
+        --var-gmb-4: 16px;
+        --var-gmb-5: 20px;
+    }
+
+    .container{
         width: 644px;
     }
 }
 
 /* MOBILE: WIDTH < 740px */
 @media (max-width: 46.1875em){
-    .grid{
-        width: 95%;
+    :root{
+        // SETTING GUTTER: 
+        --var-gp-1: 1px;
+        --var-gp-2: 2px;
+        --var-gp-3: 3px;
+        --var-gp-4: 4px;
+        --var-gp-5: 5px;
+        
+        --var-gm-1: -1px;
+        --var-gm-2: -2px;
+        --var-gm-3: -3px;
+        --var-gm-4: -4px;
+        --var-gm-5: -5px;
+        
+        --var-gmb-1: 2px;
+        --var-gmb-2: 4px;
+        --var-gmb-3: 5px;
+        --var-gmb-4: 8px;
+        --var-gmb-5: 10px;
     }
+
+    .container{
+        width: 90%;
+    }
+
 }
